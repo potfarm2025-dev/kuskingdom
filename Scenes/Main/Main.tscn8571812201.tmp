@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg8xpobl8qhue"]
+
+[ext_resource type="PackedScene" uid="uid://bakb4205mcut5" path="res://Scenes/UI/MainUI.tscn" id="1_qtv3y"]
+[ext_resource type="PackedScene" uid="uid://c7ywd8hjwa3np" path="res://Scenes/Farm/Farm.tscn" id="2_cmk6n"]
+
+[sub_resource type="GDScript" id="GDScript_io50f"]
+script/source = "extends Node2D
+"
+
+[node name="Main" type="Node2D"]
+script = SubResource("GDScript_io50f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainUi" parent="CanvasLayer" instance=ExtResource("1_qtv3y")]
+
+[node name="Farm" parent="." instance=ExtResource("2_cmk6n")]

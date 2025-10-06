@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dg8xpobl8qhue"]
+
+[ext_resource type="PackedScene" uid="uid://bakb4205mcut5" path="res://Scenes/UI/MainUI.tscn" id="1_qtv3y"]
+[ext_resource type="PackedScene" uid="uid://c7ywd8hjwa3np" path="res://Scenes/Farm/Farm.tscn" id="2_cmk6n"]
+[ext_resource type="PackedScene" uid="uid://c2ydkgiuvg3kr" path="res://Scenes/Main/camera_control.tscn" id="3_cmk6n"]
+[ext_resource type="Texture2D" uid="uid://dej83wsjvkav1" path="res://assets/Animals/image_01997f28-06fa-782c-b54f-d03bbfd9a15b_0-Photoroom.png" id="4_i3fi7"]
+
+[sub_resource type="GDScript" id="GDScript_io50f"]
+script/source = "extends Node2D
+
+func _ready():
+	var tilemap_size_in_cells = $Farm.get_world_size()
+	var cell_size = $Farm.get_cell_size()
+	print(\"TileMap size in cells: \", tilemap_size_in_cells)
+	var tilemap_size_in_world_coords = Vector2(
+		tilemap_size_in_cells.size.x * cell_size.x,
+		tilemap_size_in_cells.size.y * cell_size.y
+	)
+	print(\"TileMap size in world coordinates: \", tilemap_size_in_world_coords)
+	print(\"Limit Left: \", tilemap_size_in_cells.position.x * cell_size.x)
+	print(\"Limit Top: \", tilemap_size_in_cells.position.y * cell_size.y)
+"
+
+[node name="Main" type="Node2D"]
+script = SubResource("GDScript_io50f")
+metadata/_edit_horizontal_guides_ = [-3085.0]
+metadata/_edit_vertical_guides_ = [-3179.0]
+
+[node name="Farm" parent="." instance=ExtResource("2_cmk6n")]
+position = Vector2(-3180, -3088)
+
+[node name="MainUi" parent="." instance=ExtResource("1_qtv3y")]
+
+[node name="CameraControl" parent="." instance=ExtResource("3_cmk6n")]
+position = Vector2(7511, 5595)
+
+[node name="Image01997f2806Fa782cB54fD03Bbfd9a15b0Photoroom" type="Sprite2D" parent="."]
+position = Vector2(7468, 5583)
+texture = ExtResource("4_i3fi7")

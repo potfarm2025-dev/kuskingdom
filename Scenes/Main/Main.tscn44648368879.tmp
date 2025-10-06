@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg8xpobl8qhue"]
+
+[ext_resource type="PackedScene" uid="uid://bakb4205mcut5" path="res://Scenes/UI/MainUI.tscn" id="1_qtv3y"]
+[ext_resource type="PackedScene" uid="uid://c7ywd8hjwa3np" path="res://Scenes/Farm/Farm.tscn" id="2_cmk6n"]
+
+[sub_resource type="GDScript" id="GDScript_io50f"]
+script/source = "extends Node2D
+
+func _ready():
+	print(\"Viewport:\", get_viewport().get_visible_rect().size)
+"
+
+[node name="Main" type="Node2D"]
+script = SubResource("GDScript_io50f")
+
+[node name="Farm" parent="." instance=ExtResource("2_cmk6n")]
+position = Vector2(1, -7)
+
+[node name="MainUi" parent="." instance=ExtResource("1_qtv3y")]

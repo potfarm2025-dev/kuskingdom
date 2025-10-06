@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bdohsy1njyqii"]
+
+[ext_resource type="Texture2D" uid="uid://b0xw6q65mqk2n" path="res://assets/Plants/Skull.png" id="1_86wad"]
+[ext_resource type="Script" uid="uid://dw1wcw4gkafrn" path="res://Scripts/Item/Item.gd" id="1_t3w2g"]
+[ext_resource type="PackedScene" uid="uid://btobsdtxjygd3" path="res://Scenes/Farm/Plants/Skull.tscn" id="2_xfgvm"]
+
+[resource]
+script = ExtResource("1_t3w2g")
+id = "Skull"
+name = "Skull"
+icon = ExtResource("1_86wad")
+value = 500
+scene = ExtResource("2_xfgvm")
+placeable = true
+metadata/_custom_type_script = "uid://dw1wcw4gkafrn"

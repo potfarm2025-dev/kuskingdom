@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://588kp5kh47bn"]
+
+[ext_resource type="Texture2D" uid="uid://dej83wsjvkav1" path="res://assets/Animals/image_01997f28-06fa-782c-b54f-d03bbfd9a15b_0-Photoroom.png" id="1_odk1a"]
+[ext_resource type="Script" uid="uid://dw1wcw4gkafrn" path="res://Scripts/Item/Item.gd" id="1_okh83"]
+[ext_resource type="PackedScene" uid="uid://ce36hp7wenwmq" path="res://Scenes/Farm/Animals/Pig.tscn" id="2_6jv18"]
+
+[resource]
+script = ExtResource("1_okh83")
+id = "Dragon Piggy"
+name = "Dank Piggy NAME"
+icon = ExtResource("1_odk1a")
+value = 999999
+scene = ExtResource("2_6jv18")
+tile_size = Vector2i(2, 1)
+shop_space = 2
+metadata/_custom_type_script = "uid://dw1wcw4gkafrn"

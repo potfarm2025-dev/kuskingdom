@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg8xpobl8qhue"]
+
+[ext_resource type="Script" uid="uid://qtxv7nfatv5q" path="res://Scenes/Main/main.gd" id="1_i3fi7"]
+[ext_resource type="PackedScene" uid="uid://bakb4205mcut5" path="res://Scenes/UI/MainUI.tscn" id="1_qtv3y"]
+[ext_resource type="PackedScene" uid="uid://c7ywd8hjwa3np" path="res://Scenes/Farm/Farm.tscn" id="2_cmk6n"]
+[ext_resource type="PackedScene" uid="uid://c2ydkgiuvg3kr" path="res://Scenes/Main/camera_control.tscn" id="3_cmk6n"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_i3fi7")
+
+[node name="CameraControl" parent="." instance=ExtResource("3_cmk6n")]
+top_level = true
+z_index = 4096
+position = Vector2(16000, 9000)
+
+[node name="Farm" parent="." instance=ExtResource("2_cmk6n")]
+
+[node name="MainUi" parent="." instance=ExtResource("1_qtv3y")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 15873.0
+offset_top = 8826.0
+offset_right = 16154.0
+offset_bottom = 8895.0
+theme_override_font_sizes/font_size = 50
+text = "Map Center"

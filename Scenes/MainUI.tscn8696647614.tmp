@@ -1,0 +1,109 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8stfrpljn3d7"]
+
+[ext_resource type="Script" uid="uid://d22sg5e5k5ioo" path="res://Scripts/UI/UIController.gd" id="1_xh0hd"]
+[ext_resource type="Script" uid="uid://4pcfg2s61b13" path="res://Scripts/Shop/ShopManager.gd" id="2_yd0xa"]
+
+[node name="MainUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xh0hd")
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(1920, 85)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 85.0
+alignment = 1
+
+[node name="Money" type="Label" parent="TopBar"]
+layout_mode = 2
+text = "PLAYER Money : <value>"
+
+[node name="In_Hand" type="Label" parent="TopBar"]
+layout_mode = 2
+text = "Player_in_hand: <item>"
+
+[node name="SideBar" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 143.0
+offset_right = 88.0
+offset_bottom = 693.0
+theme_override_constants/separation = 104
+alignment = 1
+
+[node name="Shop" type="Button" parent="SideBar"]
+layout_mode = 2
+text = "SHOP"
+
+[node name="Inventory" type="Button" parent="SideBar"]
+layout_mode = 2
+text = "Inventory"
+
+[node name="Inventory" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Exit" type="Button" parent="Inventory"]
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "X"
+flat = true
+
+[node name="Shop" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_yd0xa")
+
+[node name="ColorRect" type="ColorRect" parent="Shop"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.19650194, 0.19650194, 0.19650194, 1)
+
+[node name="GridContainer" type="GridContainer" parent="Shop"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 336.0
+offset_right = 1922.0
+offset_bottom = 1083.0
+
+[node name="Exit" type="Button" parent="Shop"]
+layout_mode = 0
+offset_right = 68.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "X"
+flat = true
+
+[connection signal="pressed" from="SideBar/Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="SideBar/Inventory" to="." method="_on_inventory_pressed"]
+[connection signal="pressed" from="Inventory/Exit" to="." method="_on_inventory_exit_pressed"]
+[connection signal="pressed" from="Shop/Exit" to="." method="_on_shop_exit_pressed"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce36hp7wenwmq"]
+
+[ext_resource type="Texture2D" uid="uid://dej83wsjvkav1" path="res://assets/Animals/image_01997f28-06fa-782c-b54f-d03bbfd9a15b_0-Photoroom.png" id="1_xpw6b"]
+[ext_resource type="Script" uid="uid://cig28qkl7iis7" path="res://Scenes/Farm/Animals/Pig.gd" id="1_yy6qm"]
+
+[node name="Pig" type="Node2D"]
+texture_filter = 2
+script = ExtResource("1_yy6qm")
+object_id = "Pig"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("1_xpw6b")

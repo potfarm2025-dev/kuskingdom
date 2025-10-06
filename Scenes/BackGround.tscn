@@ -1,0 +1,96 @@
+[gd_scene load_steps=11 format=3 uid="uid://c60rkut146hf6"]
+
+[ext_resource type="Script" uid="uid://bhkm08nmu64f4" path="res://Scripts/Background/parallax_background.gd" id="1_hrnp8"]
+[ext_resource type="Texture2D" uid="uid://bbt0e07s6jyq4" path="res://assets/background/sky.png" id="2_2olod"]
+[ext_resource type="Texture2D" uid="uid://cxc52h3jnu0hp" path="res://assets/background/MyClouds.png" id="3_0bdel"]
+[ext_resource type="Texture2D" uid="uid://4a6q0alj521b" path="res://assets/background/single cloud.png" id="4_6gxoa"]
+[ext_resource type="Texture2D" uid="uid://c5irf4w0y2js0" path="res://assets/background/van.png" id="5_usba7"]
+[ext_resource type="Texture2D" uid="uid://batwvtdijtgvj" path="res://assets/Plants/Default/Lgbt_haze.png" id="6_80bwe"]
+[ext_resource type="Texture2D" uid="uid://dqq08fwlgmigm" path="res://assets/Plants/Default/LavaGuava.png" id="7_e3e4g"]
+[ext_resource type="Texture2D" uid="uid://hcqknvc53wsc" path="res://assets/Plants/Default/Green_Crack.png" id="8_rxaqu"]
+[ext_resource type="Texture2D" uid="uid://bi0mfijmwlwls" path="res://assets/Plants/Default/Home_gROWN.png" id="9_o50xt"]
+[ext_resource type="Texture2D" uid="uid://70ox5sbxrj8d" path="res://assets/Plants/Default/Grape_Haze.png" id="10_1fa4c"]
+
+[node name="BackGround" type="Node2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+script = ExtResource("1_hrnp8")
+
+[node name="Sky" type="Sprite2D" parent="CanvasLayer/ParallaxBackground"]
+position = Vector2(964.00006, 194.99998)
+scale = Vector2(1.2617188, 0.8310547)
+texture = ExtResource("2_2olod")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+texture_repeat = 2
+motion_scale = Vector2(0.2, 1)
+motion_mirroring = Vector2(1000, 0)
+
+[node name="MyClouds" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(963, 294)
+scale = Vector2(0.29921874, 0.25972226)
+texture = ExtResource("3_0bdel")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+texture_repeat = 2
+motion_scale = Vector2(0.4, 1)
+motion_mirroring = Vector2(1000, 0)
+
+[node name="MyClouds" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer3"]
+position = Vector2(95.99997, 164)
+scale = Vector2(0.35058597, 0.3377315)
+texture = ExtResource("3_0bdel")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+texture_repeat = 2
+motion_mirroring = Vector2(1920, 0)
+
+[node name="SingleCloud2" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2(379, 80)
+texture = ExtResource("4_6gxoa")
+
+[node name="SingleCloud" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2(1203, 261)
+scale = Vector2(0.82608694, 0.8214286)
+texture = ExtResource("4_6gxoa")
+
+[node name="Van" type="Sprite2D" parent="CanvasLayer/ParallaxBackground"]
+position = Vector2(966.50006, 536.5)
+scale = Vector2(0.47241214, 0.39626104)
+texture = ExtResource("5_usba7")
+
+[node name="Plants" type="Node" parent="CanvasLayer"]
+
+[node name="LgbtHaze" type="Sprite2D" parent="CanvasLayer/Plants"]
+position = Vector2(377, 1027)
+scale = Vector2(0.56347656, 0.5888672)
+texture = ExtResource("6_80bwe")
+
+[node name="LavaGuava" type="Sprite2D" parent="CanvasLayer/Plants"]
+position = Vector2(219.00002, 997)
+scale = Vector2(0.6640625, 0.5681153)
+texture = ExtResource("7_e3e4g")
+
+[node name="GreenCrack" type="Sprite2D" parent="CanvasLayer/Plants"]
+position = Vector2(43.000008, 968.00006)
+scale = Vector2(0.6928711, 0.61523443)
+texture = ExtResource("8_rxaqu")
+
+[node name="HomeGRown" type="Sprite2D" parent="CanvasLayer/Plants"]
+position = Vector2(1552.0001, 1081)
+scale = Vector2(0.66015625, 0.7246094)
+texture = ExtResource("9_o50xt")
+
+[node name="LgbtHaze2" type="Sprite2D" parent="CanvasLayer/Plants"]
+position = Vector2(1713.0001, 984.0001)
+scale = Vector2(0.64746094, 0.7236328)
+texture = ExtResource("6_80bwe")
+
+[node name="GrapeHaze" type="Sprite2D" parent="CanvasLayer/Plants"]
+position = Vector2(1872, 978)
+scale = Vector2(0.7753905, 0.74169916)
+texture = ExtResource("10_1fa4c")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1jc7kqynj2xr"]
+
+[ext_resource type="Texture2D" uid="uid://lpkt5v8q6lhv" path="res://assets/Ground/Gemini_Generated_Image_tb6qyttb6qyttb6q-Photoroom.png" id="1_mjb8b"]
+
+[node name="Tree" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-34, -27)
+texture = ExtResource("1_mjb8b")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(181, -116)
+texture = ExtResource("1_mjb8b")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(212, 109)
+texture = ExtResource("1_mjb8b")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-213, -181)
+texture = ExtResource("1_mjb8b")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(-173, 188)
+texture = ExtResource("1_mjb8b")
